@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end()
+
+const int mod = 1e9 + 7;
+const int maxn = 1e5 + 7;
+
+int main() {
+  ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+  freopen("D:\\Albrecht-CP 2025\\input.inp", "r", stdin);
+  freopen("D:\\Albrecht-CP 2025\\output.out", "w", stdout);
+  int tt; cin >> tt;
+  while (tt--) {
+    int n; cin >> n;
+    for (int i = n; i >= 1; i--) cout << i << " ";
+    cout << n << " ";
+    for (int i = 1; i < n; i++) cout << i << " ";
+    cout << '\n';
+  }
+  return 0;
+}

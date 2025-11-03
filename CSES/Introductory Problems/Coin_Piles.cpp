@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end()
+
+const int mod = 1e9 + 7;
+const int maxn = 1e5 + 7;
+
+// 4 3 -> 4 > 6 
+int32_t main() {
+  ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+  int tt; cin >> tt;
+  while (tt--) {
+    int64_t a, b; cin >> a >> b;
+    if (a < b) swap(a, b);
+    if ((a + b) % 3 == 0 && a <= 2 * b) cout << "YES" << '\n';
+    else cout << "NO" << '\n'; 
+  }
+  return 0;
+}

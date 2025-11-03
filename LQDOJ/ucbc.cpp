@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end()
+const int mod = 1e9 + 7;
+
+int main () {
+  ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+  long long a, b; cin >> a >> b;
+  cout << __gcd(a, b) << " " << (a / __gcd(a, b) * b);
+  return 0;
+}

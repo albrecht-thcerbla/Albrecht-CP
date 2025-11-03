@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end()
+
+const int mod = 1e9 + 7;
+const int maxn = 1e5 + 7;
+
+int32_t main() {
+  ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+  string s; cin >> s;
+  int l = -1, r = -1;
+  for (int i = 0; i < sz(s); i++) {
+    if (s[i] == 'A') {
+      l = i;
+      break;
+    }
+  } 
+  for (int i = sz(s) - 1; ~i; --i) {
+    if (s[i] == 'Z') {
+      r = i;
+      break;
+    }
+  }
+  if (l != -1 && r != -1 && l <= r) cout << r - l + 1 << '\n';
+  else cout << 0 << '\n';
+  return 0;
+}
