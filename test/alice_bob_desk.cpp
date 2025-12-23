@@ -17,7 +17,7 @@ int main() {
   ll front = idx - k;
   ll behind = idx + k;
   ll u1 = -1, v1 = -1; 
-  ll u2 = -1, v2 = -1; 
+  ll u2 = -1, v2 = -1;
   if (front > 0) {
     u1 = (front + 1) / 2;
     v1 = front - (u1 - 1) * 2;

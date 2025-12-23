@@ -24,7 +24,7 @@ int main () {
   ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
   cin >> s;
   n = sz(s);
-  s =  " " + s;
+  s = " " + s;
   backtrack(1, "");  
   return 0;
 }

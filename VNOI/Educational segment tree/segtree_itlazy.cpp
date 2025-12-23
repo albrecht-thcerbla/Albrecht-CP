@@ -21,10 +21,7 @@ void apply(int p, int64_t val) {
 }
 
 void push_up(int p) {
-  while (p > 1) {
-    p >>= 1;
-    t[p] = max(t[p << 1], t[p << 1 | 1]) + lazy[p];
-  }
+  for (p >>= 1; p > 1; p >>= 1) t[p] = max(t[p << 1], t[p << 1 | 1]) + lazy[p];
 }
 
 void push_down(int p) {
@@ -38,9 +35,8 @@ void push_down(int p) {
   }
 }
 void update(int l, int r, int64_t val) {
-  l += n, r += n;
-  int l0 = l, r0 = r;
-  for (; l < r; l >>= 1, r >>= 1) {
+  int l0 = l + n, r0 = r + n;
+  for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
     if (l & 1) apply(l++, val);
     if (r & 1) apply(--r, val);
   }

@@ -10,10 +10,12 @@ const int64_t inf = 1e18;
 
 int n, m;
 vector<pair<int64_t, int>> adj[maxn];
+vector<int64_t> d, par;
 
 void dijkstra(int s) {
-  vector<int64_t> d(n + 1, inf);
-  priority_queue<pair<int64_t, int>> pq; // kc - u
+  d.assign(n + 1, inf);
+  par.assign(n + 1, -1);
+  priority_queue<pair<int64_t, int>> pq;
   d[s] = 0;
   pq.emplace(-d[s], s);
   while (sz(pq)) {
@@ -24,11 +26,11 @@ void dijkstra(int s) {
     for (auto [v, w] : adj[u]) {
       if (d[v] > d[u] + w) {
         d[v] = d[u] + w;
+        par[v] = u;
         pq.emplace(-d[v], v);
       }
     }
   }
-  for (int i = 1; i <= n; i++) cout << d[i] << " ";
 }
 int32_t main() {
   ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
@@ -38,7 +40,13 @@ int32_t main() {
   for (int i = 1; i <= m; i++) {
     int x, y, w; cin >> x >> y >> w;
     adj[x].emplace_back(y, w);
+    adj[y].emplace_back(x, w);
   }
   dijkstra(1);
+  if (d[n] == inf) return cout << -1 << '\n', 0;
+  vector<int> path;
+  for (int i = n; i != -1; i = par[i]) path.emplace_back(i);
+  reverse(all(path));
+  for (int i = 0; i < sz(path); i++) cout << path[i] << " ";
   return 0;
 }

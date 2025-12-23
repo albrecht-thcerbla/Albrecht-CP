@@ -9,6 +9,8 @@ const int mod = 1e9 + 7;
 const int maxn = 2e5 + 7;
 const int64_t inf = 1e18;
 
+// Tim cha thu k cua x
+
 int n, q, p[20][maxn];
 
 int get(int u, int k) {
@@ -18,8 +20,8 @@ int get(int u, int k) {
 }
 int32_t main() {
   ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-  // freopen("D:\\Albrecht-CP 2025\\input.inp", "r", stdin);
-  // freopen("D:\\Albrecht-CP 2025\\output.out", "w", stdout);
+  freopen("D:\\Albrecht-CP 2025\\input.inp", "r", stdin);
+  freopen("D:\\Albrecht-CP 2025\\output.out", "w", stdout);
   cin >> n >> q;
   for (int i = 2; i <= n; i++) cin >> p[0][i];
   for (int i = 1; i < 20; i++) {
